@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WS04.Views.PageListar" Title="Listagem de Pacientes / Quartos">
+    <ContentPage.Content>
+        <StackLayout Margin="15">
+            <StackLayout Orientation="Horizontal">
+                <Entry x:Name="txtNome" Keyboard="Default" Placeholder="Digite o nome do Paciente" HorizontalOptions="StartAndExpand"/>
+                <Button x:Name="btnLocalizar" Text="Localizar" TextColor="Black" BackgroundColor="Cyan" CornerRadius="20" Clicked="btnLocalizar_Clicked"/>
+            </StackLayout>
+            <ListView x:Name="ListaPacientes" HasUnevenRows="True" SeparatorColor="Red" Margin="10" ItemSelected="ListaPacientes_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame BackgroundColor="Gray" CornerRadius="10">
+                                <StackLayout>
+                                    <Label Text="{Binding Id, StringFormat='Código: {0}'}"/>
+                                    <Label Text="{Binding Nome_Paciente, StringFormat='Paciente: {0}'}"/>
+                                    <Label Text="{Binding Nome_Doutor, StringFormat='Doutor: {0}'}"/>
+                                    <Label Text="{Binding Tipo_quarto, StringFormat='Tipo de Quarto: {0}'}"/>
+                                    <Label Text="{Binding Quarto, StringFormat='Quarto: {0}'}"/>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

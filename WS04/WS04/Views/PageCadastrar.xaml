@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WS04.Views.PageCadastrar" Title="Cadastro de Paciente / Quarto">
+    <ContentPage.Content>
+        <StackLayout Margin="15">
+            <Entry x:Name="txtId" IsVisible="false" IsEnabled="False"/>
+            <Label Text="Paciente:"/>
+            <Entry x:Name="txtNomePaciente" Keyboard="Default" Placeholder="Digite o nome do Paciente"/>
+            <Label Text="Doutor:"/>
+            <Entry x:Name="txtNomeDoutor" Keyboard="Default" Placeholder="Digite o nome do Doutor"/>
+            <Label Text="Escolha o Tipo do Quarto:"/>
+            <Picker x:Name="pckTipoQuarto">
+                <Picker.Items>
+                    <x:String>Solteiro</x:String>
+                    <x:String>Duplo</x:String>
+                    <x:String>Triplo</x:String>
+                </Picker.Items>
+            </Picker>
+            <Entry x:Name="txtQuarto" Keyboard="Numeric" Placeholder="Digite o Número do Quarto"/>
+            <StackLayout Orientation="Horizontal" Margin="10">
+                <Button x:Name="btnSalvar" Text="Salvar" BackgroundColor="Blue" TextColor="White" CornerRadius="20"  FontAttributes="Bold" Clicked="btnSalvar_Clicked"/>
+                <Button x:Name="btnExcluir" Text="Excluir" BackgroundColor="Red" TextColor="Wheat" CornerRadius="20"  FontAttributes="Bold" IsVisible="False" IsEnabled="False" Clicked="btnExcluir_Clicked"/> <!--Ativar o Enabled Depois-->
+                <Button x:Name="btnCancelar" Text="Cancelar" BackgroundColor="SandyBrown" TextColor="Red" BorderWidth="1.5" BorderColor="Red" CornerRadius="20"  FontAttributes="Bold" Clicked="btnCancelar_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
